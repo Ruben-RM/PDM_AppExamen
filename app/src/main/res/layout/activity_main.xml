@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bg_app">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <!-- TV Titulo App -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_card"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/title_color"
+            android:textSize="40sp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <!-- ET Character Name -->
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:id="@+id/et_name"
+                android:background="@color/bg_card"
+                android:hint="@string/hint_name"
+                android:textColorHint="@color/text_color_hint"
+                android:text=""
+                android:textSize="30sp"
+                android:textColor="@color/text_color"
+                android:singleLine="true"/>
+
+            <!-- TV Label Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/et_name"
+                app:layout_constraintBottom_toBottomOf="@+id/et_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="@string/tv_name_text"
+                android:textColor="@color/text_color"
+                android:textSize="25sp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Card Views Characters -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:id="@+id/cv_character_yuanti"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/yuanti"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:id="@+id/cv_character_orc"
+                android:layout_marginHorizontal="10dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/orc"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:id="@+id/cv_character_tiefling"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/tiefling"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="80dp">
+
+            <!-- TV Power -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_power"
+                android:text="@string/tv_power_text"
+                android:textColor="@color/text_color"
+                android:textSize="30sp"
+                />
+
+            <!-- RS Character Power -->
+            <com.google.android.material.slider.RangeSlider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:id="@+id/rs_power"
+                android:valueFrom="0"
+                android:valueTo="100"
+                android:stepSize="5"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- FAB Add Character -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_createCharacter"
+        android:contentDescription="@string/cd_fab"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/bg_fab"
+        android:src="@drawable/add_character"
+        android:tintMode="@color/white"
+        app:fabCustomSize="60dp"
+        app:maxImageSize="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

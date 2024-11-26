@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CharApp</string>
+    <string name="cd_fab">Boton para añadir al personaje</string>
+    <string name="hint_name">Character name...</string>
+    <string name="tv_name_text">Name:</string>
+    <string name="tv_power_text">Power:</string>
+    <string name="tv_race_text">Race:</string>
+    <string name="cd_iv_character">Imagen de la raza del personaje elegido</string>
+    <string name="btn_back2main">Back to character creation</string>
+</resources>
